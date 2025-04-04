@@ -4,8 +4,8 @@ RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y mariadb-server netcat
 
-COPY ./mdb-conf.sh /mdb-conf.sh
+COPY ./mariadb.sh /mariadb.sh
 
-RUN chmod +x /mdb-conf.sh
+RUN chmod +x /mariadb.sh
 
-ENTRYPOINT ["./mdb-conf.sh"]
+ENTRYPOINT ["./mariadb.sh"]
