@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WP_U_PASS=$(cat /run/secrets/wp_password)
-WP_ADMIN_PASS=$(cat /run/secrets/wp_password)
+WP_ADMIN_P=$(cat /run/secrets/wp_password)
 MYSQL_PASSWORD=$(cat /run/secrets/db_password)
 
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

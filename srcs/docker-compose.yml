@@ -25,6 +25,8 @@ services:
     build: ./nginx
     ports:
       - "443:443"
+    env_file:
+      - .env
     depends_on:
       - wordpress
     volumes:
@@ -47,6 +49,7 @@ services:
       - inception
     restart: always
     secrets: 
+      - db_password
       - wp_password
 
 volumes:
@@ -69,3 +72,8 @@ networks:
   inception:
     name: inception
 
+secrets:
+  db_password:
+    file: ../secrets/db_password.txt
+  wp_password:
+    file: ../secrets/wp_password.txt
