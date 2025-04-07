@@ -1,5 +1,8 @@
 #!/bin/bash
 
+MYSQL_PASSWORD=$(cat /run/secrets/db_password)
+MYSQL_ROOT_PASSWORD=$(cat /run/secrets/db_password)
+
 service mariadb start
 sleep 5
 
