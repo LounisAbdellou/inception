@@ -1,5 +1,5 @@
-WP_DATA = /home/data/wordpress
-DB_DATA = /home/data/mariadb
+WP_DATA = /home/labdello/data/wordpress
+DB_DATA = /home/labdello/data/mariadb
 
 all: up
 

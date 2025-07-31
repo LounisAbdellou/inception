@@ -7,9 +7,9 @@ services:
     build: ./mariadb
     volumes:
       - mariadb:/var/lib/mysql
-    env_file :
+    env_file:
       - .env
-    networks :
+    networks:
       - inception
     restart: always
     healthcheck:
@@ -17,7 +17,7 @@ services:
       interval: 1s
       timeout: 5s
       retries: 10
-    secrets: 
+    secrets:
       - db_password
   nginx:
     image: nginx:user
@@ -43,12 +43,12 @@ services:
         condition: service_healthy
     volumes:
       - wordpress:/var/www/wordpress
-    env_file :
+    env_file:
       - .env
     networks:
       - inception
     restart: always
-    secrets: 
+    secrets:
       - db_password
       - wp_password
 
@@ -57,16 +57,16 @@ volumes:
     name: mariadb
     driver: local
     driver_opts:
-      device: /home/data/mariadb
-      o : bind
-      type : none
+      device: /home/labdello/data/mariadb
+      o: bind
+      type: none
   wordpress:
     name: wordpress
     driver: local
     driver_opts:
-      device: /home/data/wordpress
-      o : bind
-      type : none
+      device: /home/labdello/data/wordpress
+      o: bind
+      type: none
 
 networks:
   inception:
